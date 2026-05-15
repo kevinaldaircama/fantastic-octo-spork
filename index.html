@@ -1,175 +1,705 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acceso no disponible</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>apps fake</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-:root{
-  --p1:#7A2FA4;
-  --p2:#C77DFF;
-  --p3:#00C7A5;
-  --danger:#ef4444;
-}
 
 *{
-  box-sizing:border-box;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(120deg,var(--p1),var(--p2),var(--p3));
-  background-size:300% 300%;
-  animation:bg 14s ease infinite;
+background:#0d1117;
+color:white;
+transition:.4s;
 }
 
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+a{
+text-decoration:none;
+color:white;
+}
+
+/* MODO CLARO */
+
+body.light{
+background:#f2f2f2;
+color:black;
+}
+
+body.light nav,
+body.light .mobile,
+body.light .card,
+body.light .box,
+body.light footer{
+
+background:white;
+color:black;
+
+}
+
+body.light a{
+color:black;
+}
+
+/* NAV */
+
+nav{
+
+background:#161b22;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+
+}
+
+.left{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.logo{
+
+font-size:22px;
+font-weight:bold;
+
+}
+
+.logo i{
+
+color:#4da6ff;
+
+}
+
+.hamburger{
+
+font-size:25px;
+cursor:pointer;
+
+}
+
+/* MENU LATERAL */
+
+.mobile{
+
+position:fixed;
+left:-260px;
+top:0;
+height:100%;
+width:250px;
+background:#161b22;
+padding:20px;
+transition:.5s;
+z-index:9999;
+
+}
+
+.mobile.show{
+
+left:0;
+
+}
+
+.mobile a{
+
+display:block;
+padding:15px;
+
+}
+
+.close{
+
+font-size:25px;
+text-align:right;
+cursor:pointer;
+
+}
+
+/* HERO */
+
+header{
+
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(
+135deg,
+#6a11cb,
+#2575fc
+);
+
+}
+
+header h1{
+
+font-size:50px;
+
+}
+
+header p{
+
+margin-top:15px;
+max-width:700px;
+margin:auto;
+
+}
+
+/* APPS */
+
+.container{
+
+max-width:1200px;
+margin:auto;
+padding:50px 20px;
+
+}
+
+.apps{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+
 }
 
 .card{
-  width:100%;
-  max-width:380px;
-  background:rgba(255,255,255,.96);
-  border-radius:22px;
-  padding:28px;
-  text-align:center;
-  box-shadow:0 40px 80px rgba(0,0,0,.3);
-  animation:pop .6s ease;
+
+background:#161b22;
+padding:20px;
+border-radius:20px;
+text-align:center;
+
 }
 
-@keyframes pop{
-  from{transform:scale(.9);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
+.card img{
 
-.icon{
-  width:84px;
-  height:84px;
-  margin:0 auto 14px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#fecaca,#ef4444);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:38px;
-  box-shadow:0 10px 30px rgba(239,68,68,.5);
-}
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:15px;
 
-h1{
-  margin:10px 0 6px;
-  font-size:22px;
-  font-weight:800;
-  color:#1e293b;
-}
-
-.subtitle{
-  font-size:14px;
-  color:#475569;
-  margin-bottom:18px;
-}
-
-.alert{
-  background:#fee2e2;
-  color:#991b1b;
-  font-size:13px;
-  padding:12px;
-  border-radius:12px;
-  font-weight:600;
-  margin-bottom:18px;
 }
 
 .info{
-  font-size:13px;
-  color:#334155;
-  margin-bottom:20px;
+
+margin-top:15px;
+opacity:.8;
+
+}
+
+/* ESTADÍSTICAS */
+
+.stats{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px;
+
+}
+
+.box{
+
+background:#161b22;
+padding:30px;
+border-radius:20px;
+text-align:center;
+
+}
+
+.number{
+
+font-size:35px;
+font-weight:bold;
+color:#4da6ff;
+
+}
+
+/* FOOTER */
+
+footer{
+
+background:#161b22;
+padding:40px;
+text-align:center;
+
+}
+
+.social{
+
+margin:20px;
+
+}
+
+.social i{
+
+font-size:30px;
+margin:10px;
+cursor:pointer;
+
+}
+
+.links{
+
+margin-top:20px;
+
+}
+
+.links a{
+
+margin:10px;
+opacity:.8;
+
+}
+
+/* MODAL */
+
+.modal{
+
+display:none;
+position:fixed;
+width:100%;
+height:100%;
+left:0;
+top:0;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+z-index:99999;
+
+}
+
+.modal-box{
+
+background:#161b22;
+padding:30px;
+border-radius:20px;
+width:300px;
+text-align:center;
+
 }
 
 .btn{
-  width:100%;
-  border:none;
-  border-radius:14px;
-  padding:14px;
-  font-size:15px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.25s;
+
+display:block;
+padding:15px;
+margin-top:15px;
+background:#2575fc;
+border-radius:15px;
+
 }
 
-.pay{
-  background:linear-gradient(135deg,var(--p3),#22d3ee);
-  color:#fff;
-  margin-bottom:12px;
+.closemodal{
+
+float:right;
+cursor:pointer;
+
 }
 
-.pay:hover{transform:scale(1.03)}
-
-.contact{
-  background:#f1f5f9;
-  color:#334155;
-}
-
-.contact:hover{background:#e2e8f0}
-
-.watermark{
-  margin-top:14px;
-  font-size:11px;
-  color:#64748b;
-  opacity:.9;
-}
 </style>
+
 </head>
 
 <body>
 
-<div class="card">
 
-  <div class="icon">⛔</div>
+<!-- MENU -->
 
-  <h1>Acceso no disponible</h1>
-  <div class="subtitle">Servicio suspendido temporalmente</div>
+<div class="mobile" id="mobile">
 
-  <div class="alert">
-    Tu acceso ha sido bloqueado por <strong>falta de pago</strong>.
-  </div>
+<div class="close"
+onclick="closeMenu()">
 
-  <div class="info">
-    Para continuar usando el servicio, realiza el pago correspondiente o
-    contacta con el administrador.
-  </div>
-
-  <button class="btn pay" onclick="pagar()">
-    Reactivar acceso
-  </button>
-
-  <button class="btn contact" onclick="contactar()">
-    Contactar soporte
-  </button>
-
-  <div class="watermark">
-    Desarrollador: <strong>KTT</strong> · Sistema protegido
-  </div>
+<i class="fa-solid fa-xmark"></i>
 
 </div>
 
+<br>
+
+<a href="#">
+
+<i class="fa fa-home"></i>
+
+Inicio
+
+</a>
+
+<a href="#apps">
+
+<i class="fa fa-mobile"></i>
+
+Apps
+
+</a>
+
+<a href="#stats">
+
+<i class="fa fa-chart-line"></i>
+
+Estadísticas
+
+</a>
+
+
+<a onclick="toggleAccess()">
+
+<i class="fa fa-user"></i>
+
+Acceso
+
+<i class="fa fa-chevron-down"
+style="float:right"></i>
+
+</a>
+
+<div id="accessMenu"
+style="display:none;padding-left:15px">
+
+<a href="#"
+onclick="openModal()">
+
+Login
+
+</a>
+
+<a href="https://yape.roddox.es/planes">
+
+Comprar acceso
+
+</a>
+<a href="#">
+
+comprar código
+
+</a>
+<a href="https://androidappstore.kevintechtutorials.site/2026/05/yape-mod.html?m=1">
+
+descargar app yape 
+
+</a>
+</div>
+
+
+<hr style="margin:15px 0">
+
+
+<a onclick="toggleTheme()">
+
+<i class="fa-solid fa-circle-half-stroke"></i>
+
+Modo claro / oscuro
+
+</a>
+
+</div>
+
+
+<!-- NAV -->
+
+<nav>
+
+<div class="left">
+
+<div class="hamburger"
+onclick="openMenu()">
+
+<i class="fa fa-bars"></i>
+
+</div>
+
+<div class="logo">
+
+<i class="fa fa-bolt"></i>
+
+apps fake
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header>
+
+<h1>
+
+ apps fake
+
+</h1>
+
+<p>
+
+bienvenido a la web de apps fake aqui puedes tener yape y bcp actualizado totalmente renovado por un único costo.
+
+</p>
+
+</header>
+
+
+
+<!-- APPS -->
+
+<div class="container"
+id="apps">
+
+<h2 align="center">
+
+Apps disponibles
+
+</h2>
+
+<br><br>
+
+<div class="apps">
+
+<div class="card">
+
+<img src="https://yape.roddox.es/imagen/splash_icon_xxxhdpi.png">
+
+<h3>
+
+yape oficial fake
+
+</h3>
+
+<div class="info">
+
+Aplicación moderna con nuevas funciones y mejoras actualizaciones constantes.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://www.appcreator24.com/srv/imgs/gen/3797113_ico.png?ts=1778805869">
+
+<h3>
+
+banca móvil BCP fake 
+
+</h3>
+
+<div class="info">
+
+aplicación actualizado y modernizado para que agas tus baucher fake.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="stats"
+id="stats">
+
+<div class="box">
+
+<div class="number">
+
+100+
+
+</div>
+
+Usuarios
+
+</div>
+
+<div class="box">
+
+<div class="number">
+
+100%
+
+</div>
+
+operativo
+
+</div>
+
+<div class="box">
+
+<div class="number">
+
+24/7
+
+</div>
+
+Soporte
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h2>
+
+Redes Sociales
+
+</h2>
+
+<div class="social">
+
+<i class="fab fa-telegram"></i>
+
+<i class="fab fa-youtube"></i>
+
+</div>
+
+<div class="links">
+
+<a href="https://yape.roddox.es/Términos y condiciones">
+
+Términos y condiciones
+
+</a>
+
+|
+
+<a href="#">
+
+Política de privacidad
+
+</a>
+
+</div>
+
+<br>
+
+© <span id="year"></span>
+
+apps fake by Kevin tech tutorials 
+
+</footer>
+
+
+
+<!-- MODAL LOGIN -->
+
+<div class="modal"
+id="loginModal">
+
+<div class="modal-box">
+
+<div class="closemodal"
+onclick="closeModal()">
+
+✖
+
+</div>
+
+<h3>
+
+¿Dónde quieres iniciar sesión?
+
+</h3>
+
+<a class="btn"
+href="https://yape.roddox.es">
+
+yape fake 
+
+</a>
+
+<a class="btn"
+href="https://bcp.roddox.es">
+
+bcp fake
+
+</a>
+
+</div>
+
+</div>
+
+
 <script>
-function pagar(){
-  window.location.href = "https://wa.me/message/2Q7FHTMNO7IVO1";
+
+function openMenu(){
+
+document
+.getElementById("mobile")
+.classList.add("show");
+
 }
 
-function contactar(){
-  window.location.href = "https://wa.me/message/2Q7FHTMNO7IVO1";
+function closeMenu(){
+
+document
+.getElementById("mobile")
+.classList.remove("show");
+
 }
+
+function toggleAccess(){
+
+let menu=
+document.getElementById(
+"accessMenu"
+);
+
+menu.style.display=
+menu.style.display==="block"
+?"none":"block";
+
+}
+
+function toggleTheme(){
+
+document.body
+.classList.toggle("light");
+
+}
+
+function openModal(){
+
+document
+.getElementById("loginModal")
+.style.display="flex";
+
+}
+
+function closeModal(){
+
+document
+.getElementById("loginModal")
+.style.display="none";
+
+}
+
+document
+.getElementById("year")
+.innerHTML=
+new Date().getFullYear();
+
 </script>
 
 </body>
-  </html>
+</html>
